@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: 'Righteous', cursive;
+  color: white;
+}
+
+.split {
+  height: 60%;
+  width: 40%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.split1 {
+  height: 60%;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.split2 {
+  height: 40%;
+  width: 33.5%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split3 {
+  height: 40%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+
+.left {
+    background-color: black;
+  left: 0;
+}
+
+.middle{
+    background-color: black;
+    left: 33.5%;
+}
+
+.right {
+    background-color: black;
+  right: 0;
+}
+
+.right1 {
+    background-color: white;
+  right: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.vid{
+    border: none
+}
+
+.imgg{
+    position: absolute;
+    top: 0px;
+    left: 5%;
+}
+
+.med_head{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: black;
+    font-size: 200%;
+}
+
+.num{
+    position: absolute;
+    bottom: 50%;
+    right: 15%;
+    color: #FFD700 ;
+    font-size: 600%;
+}
+
+.pie{
+  overflow: hidden;
+}
+
+.ali{
+  position: absolute;
+  left: 5%;
+  
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="split1 left">
+
+    <iframe width=100% height=95% class="vid"
+    src="https://www.youtube.com/embed/PPzKB3GWiwE?autoplay=1">
+    </iframe>
+
+</div>
+
+<div class="split right1">
+    <h2 class="med_head">MEDALS LEFT</h2>
+    <iframe src="https://giphy.com/embed/Sx9icPlpIAYSJiMYik" width="250" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/tag-price-medal-Sx9icPlpIAYSJiMYik"></a></p>
+    <div class="num">10</div>
+</div>
+
+<div class="split2 left">
+  <div class="centered1">
+    <h1 class="ali">
+      <div style="color:green">TEAM WINS</div>
+    </br>
+      <div style="color:red">TEAM LOSSES</div>
+  </br>
+      <div style="color:yellow">TEAM DRAWS</div>
+    </h1>
+  </div>
+</div>
+     
+<div class="split2 middle">
+    <div class="centered">
+      <div class="pie" id="piechart"></div>
+    </div>
+  </div>
+ 
+<div class="split2 right">
+  <div class="centered">
+    <h1>
+      MIT CHESS TEAM VS MIT MANIPAL
+    </h1>
+  </div>
+</div>
+
+
+
+</body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Result', 'Number'],
+  ['Wins of MIT Chess Club', 8],
+  ['Losses of MIT Chess Club', 2],
+  ['Draws of MIT Chess Club', 2],
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':950, 'height':400,backgroundColor: '#000000',is3D:true,colors:['#0afa1e','#fa120a','#eefa0a'],legend: {position: 'none'},overflow:'hidden'};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+
+
+
+</html> 
